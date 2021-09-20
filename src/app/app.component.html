@@ -1,0 +1,17 @@
+<div class="register-form">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label>Email</label>
+      <input
+        type="text"
+        formControlName="email"
+        class="form-control"
+        [ngClass]="{ 'is-invalid': f.email.errors.invalid }"
+      />
+      <div *ngIf="f.email.errors" class="invalid-feedback">
+        <div *ngIf="f.email.errors.required">Email is required</div>
+        <div *ngIf="f.email.errors.invalid">Email is invalid</div>
+      </div>
+    </div>
+  </form>
+</div>
